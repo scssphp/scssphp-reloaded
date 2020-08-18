@@ -1,0 +1,71 @@
+{
+    "name": "scssphp/scssphp2",
+    "type": "library",
+    "description": "scssphp2 is a compiler for SCSS written in PHP.",
+    "keywords": ["css", "stylesheet", "scss", "sass", "less"],
+    "homepage": "http://scssphp.github.io/scssphp2/",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Anthon Pang",
+            "email": "apang@softwaredevelopment.ca",
+            "homepage": "https://github.com/robocoder"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sass\\": "src/Sass/",
+            "ScssPhp\\": "src/ScssPhp/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sass\\Tests\\": "tests/Sass/",
+            "ScssPhp\\Tests\\": "tests/ScssPhp/"
+        }
+    },
+    "require": {
+        "php": ">=5.6.0",
+        "ext-json": "*",
+        "ext-ctype": "*"
+    },
+    "require-dev": {
+        "sass/sass-spec": "3.6.0",
+        "squizlabs/php_codesniffer": "~3.5",
+        "phpunit/phpunit": "^5.7 || ^6.5 || ^7.5 || ^8.3"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "sass/sass-spec",
+                "version": "3.6.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/sass/sass-spec.git",
+                    "reference": "eb1d9a1f3f478bfaf76ec0d66fc73e30e9ea5d22"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/sass/sass-spec/zipball/eb1d9a1f3f478bfaf76ec0d66fc73e30e9ea5d22",
+                    "reference": "eb1d9a1f3f478bfaf76ec0d66fc73e30e9ea5d22",
+                    "shasum": ""
+                }
+            }
+        }
+    ],
+    "minimum-stability": "dev",
+    "bin": ["bin/sass"],
+    "archive": {
+        "exclude": [
+            "/Makefile",
+            "/.gitattributes",
+            "/.gitignore",
+            "/.travis.yml",
+            "/phpunit.xml.dist",
+            "/tests"
+        ]
+    }
+}
