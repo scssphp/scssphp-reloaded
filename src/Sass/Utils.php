@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright 2018 Google Inc.
  * @license https://opensource.org/licenses/MIT MIT
@@ -8,6 +9,7 @@
  *
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
+
 namespace Sass
 {
     use DartLang\Path\Path;
@@ -34,20 +36,18 @@ namespace Sass
     /**
      * Returns [string] with every line indented [indentation] spaces.
      *
-     * @param string  $string
-     * @param integer $indentation
+     * @param string $string
+     * @param int    $indentation
      *
      * @return string
      */
     function indent($string, $indentation)
     {
-        return implode("\n",
-            array_map(function ($line) use ($indentation)
-                {
+        return implode(
+            "\n",
+            array_map(function ($line) use ($indentation) {
                     return str_repeat(' ', $indentation) . $line;
-                },
-                explode("\n", $string)
-            )
+            }, explode("\n", $string))
         );
     }
 

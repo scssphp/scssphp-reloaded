@@ -24,11 +24,12 @@ and draft [PSR-19 PHPDoc tags][psr19].
 [psr12]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md
 [psr19]: https://github.com/php-fig/fig-standards/blob/master/proposed/phpdoc-tags.md
 
-To facilitate maintenance, the source code structures are similar. In addition,
-we use a small compatibility library to emulate a subset of various Dart platform
-packages. Lastly, there may be deviations for performance, error handling,
-testability, or self-imposed constraints (such as object calisthenics, SOLID,
-Clean Code, etc).
+Aside from file and class naming conventions, the source code structures should
+be similar to facilitate ongoing maintenance. To aid in porting, a subset of the
+Dart SDK and packages also exists to emulate the platform.
+
+However, there may be deviations from the above guidelines to address issues
+with performance, error handling, or testability.
 
 Before you send a pull request, we recommend you run the following steps:
 
@@ -47,29 +48,35 @@ All source files in the project must start with an appropriate file header.
 For files ported from `dart-sass`:
 ```php
 <?php
+
 /**
  * @copyright 2020 Google Inc.
  * @license https://opensource.org/licenses/MIT MIT
  */
+
 namespace Sass;
 ```
 
 For files ported from `dart-lang`:
 ```php
 <?php
+
 /**
  * @copyright 2014 Dart project authors
  * @license https://opensource.org/licenses/BSD-3-Clause BSD
  */
+
 namespace DartLang;
 ```
 
 For `scssphp` specific support files:
 ```php
 <?php
+
 /**
  * @copyright 2020 Anthon Pang
  * @license https://opensource.org/licenses/MIT MIT
  */
+
 namespace ScssPhp;
 ```

@@ -1,8 +1,13 @@
 <?php
+
 /**
  * @copyright 2018 Google Inc.
  * @license https://opensource.org/licenses/MIT MIT
+ *
+ * @link https://github.com/sass/dart-sass
+ * @see lib/src/syntax.dart@149bf85b
  */
+
 namespace Sass;
 
 use DartLang\Path\Path;

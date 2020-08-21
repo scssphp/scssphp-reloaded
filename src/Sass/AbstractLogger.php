@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright 2017 Google Inc.
  * @license http://opensource.org/licenses/MIT MIT
@@ -6,6 +7,7 @@
  * @link https://github.com/sass/dart-sass.git
  * @see lib/src/logger.dart@487e5025
  */
+
 namespace Sass;
 
 use ScssPhp\SourceSpan\SourceSpan;
@@ -17,7 +19,7 @@ use ScssPhp\SourceSpan\SourceSpan;
  *
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
-abstract class Logger
+abstract class AbstractLogger
 {
     /**
      * Emits a warning with the given [message].

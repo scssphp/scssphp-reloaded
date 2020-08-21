@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright 2018 Google Inc.
  * @license http://opensource.org/licenses/MIT MIT
@@ -6,11 +7,12 @@
  * @link https://github.com/sass/dart-sass.git
  * @see lib/src/logger/stderr.dart@487e5025
  */
+
 namespace Sass\Logger;
 
 use DartLang\Path\Path;
 use DartLang\SourceSpan\SourceSpan;
-use Sass\Logger;
+use Sass\AbstractLogger;
 use Sass\Utils;
 
 /**
@@ -18,12 +20,12 @@ use Sass\Utils;
  *
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
-class StderrLogger extends Logger
+class StderrLogger extends AbstractLogger
 {
     /**
      * Whether to use terminal colors in messages.
      *
-     * @var boolean
+     * @var bool
      */
     private $color;
 
@@ -31,7 +33,7 @@ class StderrLogger extends Logger
      * Creates a logger that prints warnings to standard error, with terminal
      * colors if [color] is `true` (default `false`).
      *
-     * @param boolean $color
+     * @param bool $color
      */
     public function __construct($color = false)
     {
@@ -68,7 +70,7 @@ class StderrLogger extends Logger
 
         if (\is_null($args['span'])) {
             \fwrite(STDERR, ": $message\n");
-        } elseif ( ! \is_null($args['trace'])) {
+        } elseif (! \is_null($args['trace'])) {
             // If there's a span and a trace, the span's location information is
             // probably duplicated in the trace, so we just use it for highlighting.
             \fwrite(STDERR, ": $message\n\n" . $args['span']->highlight(['color' => $this->color]) . "\n");
@@ -76,7 +78,7 @@ class StderrLogger extends Logger
             \fwrite(STDERR, ' on ' . $args['span']->message("\n" . $message, ['color' => $this->color]) . "\n");
         }
 
-        if ( ! \is_null($args['trace'])) {
+        if (! \is_null($args['trace'])) {
             \fwrite(STDERR, indent(rtrim((string) $args['trace']), 4) . "\n");
         }
 

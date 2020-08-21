@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright 2017 Google Inc.
  * @license http://opensource.org/licenses/MIT MIT
@@ -6,35 +7,36 @@
  * @link https://github.com/sass/dart-sass.git
  * @see lib/src/logger/tracking.dart@487e5025
  */
+
 namespace Sass\Logger;
 
 use DartLang\SourceSpan\SourceSpan;
 use DartLang\StackTrace\StackTrace;
-use Sass\Logger;
+use Sass\AbstractLogger;
 
 /**
  * A logger that wraps another logger and keeps track of when it is used.
  *
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
-class TrackingLogger extends Logger
+class TrackingLogger extends AbstractLogger
 {
     /**
-     * @var Logger
+     * @var AbstractLogger
      */
     protected $logger;
 
     /**
      * Whether [warn] has been called on this logger.
      *
-     * @var boolean
+     * @var bool
      */
     protected $emittedWarning;
 
     /**
      * Whether [debug] has been called on this logger.
      *
-     * @var boolean
+     * @var bool
      */
     protected $emittedDebug;
 
@@ -63,7 +65,7 @@ class TrackingLogger extends Logger
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function getEmittedWarning()
     {
@@ -71,7 +73,7 @@ class TrackingLogger extends Logger
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function getEmittedDebug()
     {

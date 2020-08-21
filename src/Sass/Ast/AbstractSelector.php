@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright 2018 Google Inc.
  * @license https://opensource.org/licenses/MIT MIT
@@ -6,6 +7,7 @@
  * @link https://github.com/sass/dart-sass
  * @see lib/src/ast/node.dart@f1c23e74
  */
+
 namespace Sass\Ast;
 
 use DartLang\SourceSpan\FileSpan;
@@ -22,13 +24,13 @@ use Sass\Visitor\Serialize;
  *
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
-abstract class Selector
+abstract class AbstractSelector
 {
     /**
      * Whether this selector, and complex selectors containing it, should not be
      * emitted.
      *
-     * @var boolean
+     * @var bool
      */
     protected $isInvisible = false;
 

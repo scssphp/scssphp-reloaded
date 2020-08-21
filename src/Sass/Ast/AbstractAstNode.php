@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @copyright 2018 Google Inc.
  * @license https://opensource.org/licenses/MIT MIT
@@ -6,6 +7,7 @@
  * @link https://github.com/sass/dart-sass
  * @see lib/src/ast/node.dart@aa18e65f5
  */
+
 namespace Sass\Ast;
 
 use DartLang\SourceSpan\FileSpan;
@@ -16,7 +18,7 @@ use Sass\Ast\FakeAstNode;
  *
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
-abstract class AstNode
+abstract class AbstractAstNode
 {
     /**
      * The source span associated with the node.
@@ -36,7 +38,7 @@ abstract class AstNode
      * eagerly can be expensive. This allows arbitrary spans to be passed to
      * those callbacks while still being lazily computed.
      *
-     * @return AstNode
+     * @return AbstractAstNode
      */
     public static function fake(callable $callback)
     {

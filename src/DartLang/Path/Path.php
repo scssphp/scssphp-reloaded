@@ -1,8 +1,10 @@
 <?php
+
 /**
  * @copyright 2020 Anthon Pang
  * @license https://opensource.org/licenses/MIT MIT
  */
+
 namespace DartLang\Path;
 
 /**
