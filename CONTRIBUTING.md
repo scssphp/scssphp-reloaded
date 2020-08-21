@@ -42,8 +42,9 @@ ScssPhp2 does not support the asynchronous mode of operation (at this time).
 
 ### File Headers
 
-All source files in the project must start with one of the following headers:
+All source files in the project must start with an appropriate file header.
 
+For files ported from `dart-sass`:
 ```php
 <?php
 /**
@@ -53,7 +54,17 @@ All source files in the project must start with one of the following headers:
 namespace Sass;
 ```
 
-or
+For files ported from `dart-lang`:
+```php
+<?php
+/**
+ * @copyright 2014 Dart project authors
+ * @license https://opensource.org/licenses/BSD-3-Clause BSD
+ */
+namespace DartLang;
+```
+
+For `scssphp` specific support files:
 ```php
 <?php
 /**

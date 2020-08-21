@@ -5,7 +5,7 @@
  */
 namespace Sass;
 
-use ScssPhp\Path\Path;
+use DartLang\Path\Path;
 
 /**
  * An enum of syntaxes that Sass can parse.

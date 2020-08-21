@@ -1,10 +1,7 @@
 <?php
 /**
- * SCSSPHP
- *
- * @copyright 2018-2020 Anthon Pang
- *
- * @license http://opensource.org/licenses/MIT MIT
+ * @copyright 2020 Anthon Pang
+ * @license https://opensource.org/licenses/MIT MIT
  *
  * @link http://scssphp.github.io/scssphp2
  */
@@ -17,5 +14,5 @@ namespace Sass;
  */
 class Version
 {
-    const VERSION = '1.0.0-dev';
+    const VERSION = '1.26.10-dev';
 }
