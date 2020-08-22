@@ -62,7 +62,7 @@ For files ported from `dart-lang`:
 <?php
 
 /**
- * @copyright 2014 Dart project authors
+ * @copyright 2020 Dart project authors
  * @license https://opensource.org/licenses/BSD-3-Clause BSD
  */
 

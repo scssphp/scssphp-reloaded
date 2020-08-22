@@ -79,7 +79,7 @@ class StderrLogger extends AbstractLogger
         }
 
         if (! \is_null($args['trace'])) {
-            \fwrite(STDERR, indent(rtrim((string) $args['trace']), 4) . "\n");
+            \fwrite(STDERR, Utils::indent(\rtrim((string) $args['trace']), 4) . "\n");
         }
 
         \fwrite(STDERR, "\n");

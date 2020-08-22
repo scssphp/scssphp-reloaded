@@ -2,7 +2,7 @@
     "name": "scssphp/scssphp2",
     "type": "library",
     "description": "scssphp2 is a compiler for SCSS written in PHP.",
-    "keywords": ["css", "stylesheet", "scss", "sass", "less"],
+    "keywords": ["sass", "scss", "css", "cascading", "style", "sheet", "preprocessor", "less"],
     "homepage": "http://scssphp.github.io/scssphp2/",
     "license": [
         "MIT"
@@ -17,21 +17,22 @@
     "autoload": {
         "psr-4": {
             "Sass\\": "src/Sass/",
-            "DartLang\\": "src/DartLang/"
+            "DartLang\\": "src/DartLang/",
             "ScssPhp\\": "src/ScssPhp/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Sass\\Tests\\": "tests/Sass/",
-            "DartLang\\Tests\\": "tests/DartLang/"
+            "DartLang\\Tests\\": "tests/DartLang/",
             "ScssPhp\\Tests\\": "tests/ScssPhp/"
         }
     },
     "require": {
         "php": ">=5.6.0",
         "ext-json": "*",
-        "ext-ctype": "*"
+        "ext-ctype": "*",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "sass/sass-spec": "2020.08.10",
@@ -61,7 +62,9 @@
         }
     ],
     "minimum-stability": "dev",
-    "bin": ["bin/sass"],
+    "bin": [
+        "bin/sass"
+    ],
     "archive": {
         "exclude": [
             "/Makefile",

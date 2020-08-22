@@ -10,14 +10,16 @@
  * @author Anthon Pang <apang@softwaredevelopment.ca>
  */
 
-namespace Sass
-{
-    use DartLang\Path\Path;
+namespace Sass;
 
+use DartLang\Path\Path;
+
+class Utils
+{
     /**
      * The URL used in stack traces when no source URL is available.
      */
-    function _noSourceUrl()
+    private static function noSourceUrl()
     {
     }
 
@@ -29,7 +31,7 @@ namespace Sass
      *
      * @return string
      */
-    function toSentence()
+    public static function toSentence()
     {
     }
 
@@ -41,149 +43,149 @@ namespace Sass
      *
      * @return string
      */
-    function indent($string, $indentation)
+    public static function indent($string, $indentation)
     {
         return implode(
             "\n",
-            array_map(function ($line) use ($indentation) {
+            array_map(public static function ($line) use ($indentation) {
                     return str_repeat(' ', $indentation) . $line;
             }, explode("\n", $string))
         );
     }
 
-    function countOccurrences($string, $codeUnit)
+    public static function countOccurrences($string, $codeUnit)
     {
     }
 
-    function trimAscii($string, $args)
+    public static function trimAscii($string, $args)
     {
     }
 
-    function trimAsciiLeft($string, $args)
+    public static function trimAsciiLeft($string, $args)
     {
     }
 
-    function trimAsciiRight($string, $args)
+    public static function trimAsciiRight($string, $args)
     {
     }
 
-    function _firstNonWhitespace($string)
+    private static function firstNonWhitespace($string)
     {
     }
 
-    function _lastNonWhitespace($string, $args)
+    private static function lastNonWhitespace($string, $args)
     {
     }
 
-    function isPublic(string $member)
+    public static function isPublic(string $member)
     {
     }
 
-    function flattenVertically()
+    public static function flattenVertically()
     {
     }
 
-    function firstOrNull()
+    public static function firstOrNull()
     {
     }
 
-    function codepointIndexToCodeUnitIndex()
+    public static function codepointIndexToCodeUnitIndex()
     {
     }
 
-    function codeUnitIndexToCodepointIndex()
+    public static function codeUnitIndexToCodepointIndex()
     {
     }
 
-    function iterableEquals()
+    public static function iterableEquals()
     {
     }
 
-    function iterableHash()
+    public static function iterableHash()
     {
     }
 
-    function listEquals()
+    public static function listEquals()
     {
     }
 
-    function listHash()
+    public static function listHash()
     {
     }
 
-    function mapEquals()
+    public static function mapEquals()
     {
     }
 
-    function mapHash()
+    public static function mapHash()
     {
     }
 
-    function frameForSpan()
+    public static function frameForSpan()
     {
     }
 
-    function spanForList()
+    public static function spanForList()
     {
     }
 
-    function declarationName()
+    public static function declarationName()
     {
     }
 
-    function unvendor()
+    public static function unvendor()
     {
     }
 
-    function equalsIgnoreCase()
+    public static function equalsIgnoreCase()
     {
     }
 
-    function startsWithIgnoreCase()
+    public static function startsWithIgnoreCase()
     {
     }
 
-    function mapInPlace()
+    public static function mapInPlace()
     {
     }
 
-    function longestCommonSubsequence()
+    public static function longestCommonSubsequence()
     {
     }
 
-    function backtrack()
+    public static function backtrack()
     {
     }
 
-    function removeFirstWhere()
+    public static function removeFirstWhere()
     {
     }
 
-    function mapAddAll2()
+    public static function mapAddAll2()
     {
     }
 
-    function setAll()
+    public static function setAll()
     {
     }
 
-    function rotateSlice()
+    public static function rotateSlice()
     {
     }
 
-    function mapAsync()
+    public static function mapAsync()
     {
     }
 
-    function putIfAbsentAsync()
+    public static function putIfAbsentAsync()
     {
     }
 
-    function copyMapOfMap()
+    public static function copyMapOfMap()
     {
     }
 
-    function copyMapOfList()
+    public static function copyMapOfList()
     {
     }
 }
