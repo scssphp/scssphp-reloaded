@@ -29,7 +29,7 @@ class ArrayUtils
      */
     public static function any(array $array, /*callback*/ $callback)
     {
-        foreach ($array as $element) {
+        foreach ($array as &$element) {
             if (call_user_func($callback, $element)) {
                 return true;
             }
@@ -63,5 +63,112 @@ class ArrayUtils
         }
 
         return $flattened;
+    }
+
+    /**
+     * Returns the first element.
+     *
+     * Throws a StateError if this is empty. Otherwise returns the first element
+     * in the iteration order, equivalent to this.elementAt(0).
+     *
+     * @return mixed
+     *
+     * @throws \OutOfRangeException
+     */
+    public static function first(array $array)
+    {
+        if (! count($array)) {
+            throw new \OutOfRangeException('no first element');
+        }
+
+        return $array[0];
+    }
+
+    /**
+     * Returns the last element.
+     *
+     * Throws a StateError if this is empty. Otherwise may iterate through the
+     * elements and returns the last one seen. Some iterables may have more
+     * efficient ways to find the last element (for example a list can directly
+     * access the last element, without iterating through the previous ones).
+     *
+     * @return mixed
+     *
+     * @throws \OutOfRangeException
+     */
+    public static function last(array $array)
+    {
+        $last = count($array) - 1;
+
+        if ($last < 0) {
+            throw new \OutOfRangeException('no last element');
+        }
+
+        return $array[$last];
+    }
+
+    /**
+     * Removes and returns the first element of this queue.
+     *
+     * The queue must not be empty when this method is called.
+     *
+     * @param array $array
+     *
+     * @return mixed
+     */
+    public static function removeFirst(array &$array)
+    {
+        if (! count($array)) {
+            throw new \InvalidArgumentException('no first element');
+        }
+
+        $result = \array_shift($array);
+
+        return $result;
+    }
+
+    /**
+     * Returns an Iterable that provides all but the first count elements.
+     *
+     * When the returned iterable is iterated, it starts iterating over this,
+     * first skipping past the initial count elements. If this has fewer than
+     * count elements, then the resulting Iterable is empty. After that, the
+     * remaining elements are iterated in the same order as in this iterable.
+     *
+     * Some iterables may be able to find later elements without first iterating
+     * through earlier elements, for example when iterating a List. Such
+     * iterables are allowed to ignore the initial skipped elements.
+     *
+     * The count must not be negative.
+     *
+     * @param array $array
+     * @param int   $count
+     *
+     * @return array
+     */
+    public static function skip(array $array, $count)
+    {
+        return array_slice($array, $count);
+    }
+
+    /**
+     * Returns a lazy iterable of the count first elements of this iterable.
+     *
+     * The returned Iterable may contain fewer than count elements, if this
+     * contains fewer than count elements.
+     *
+     * The elements can be computed by stepping through iterator until count
+     * elements have been seen.
+     *
+     * The count must not be negative.
+     *
+     * @param array $array
+     * @param int   $count
+     *
+     * @return array
+     */
+    public static function take(array $array, $count)
+    {
+        return array_slice($array, 0, $count);
     }
 }

@@ -58,7 +58,32 @@ class ArrayUtilsTest extends TestCase
     public static function provideExpand()
     {
         return [
-            [[1, 2, 3, 4], [[1, 2], [3, 4]], function ($e) { return $e; }],
+            [[1, 2, 3, 4], [[1, 2], [3, 4]], function ($e) {
+                return $e;
+            }],
+        ];
+    }
+
+    /**
+     * @param mixed $expected
+     * @param mixed $input
+     * @param mixed $count
+     *
+     * @dataProvider provideTake
+     */
+    public function testTake($expected, $input, $count)
+    {
+        $this->assertSame($expected, ArrayUtils::take($input, $count));
+    }
+
+    /**
+     * @return array
+     */
+    public static function provideTake()
+    {
+        return [
+            [['1', '2'], ['1', '2', '3'], 2],
+            [[], ['1', '2', '3'], 0],
         ];
     }
 }
